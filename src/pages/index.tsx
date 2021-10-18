@@ -1,10 +1,22 @@
-import { Button } from '@chakra-ui/react'
-import { Layout } from "systems/Core"
+import { FC } from 'react'
+import { css } from '@emotion/react'
+import tw from 'twin.macro'
 
-export default function Home() {
+import { Layout } from 'systems/Core'
+
+const Home: FC = () => {
   return (
-    <Layout title="Eventos App">
-      Hello World
+    <Layout title="NextJS Boilerplate">
+      <main css={styles.root}>Hello world</main>
     </Layout>
   )
 }
+
+const styles = {
+  root: css`
+    ${tw`flex flex-col items-center justify-center w-full`};
+    height: 100vh;
+  `,
+}
+
+export default Home

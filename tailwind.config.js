@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+const breakpoints = require('./src/styles/breakpoints.json')
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -9,12 +9,17 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
-        body: colors.blueGray['100'],
         gray: colors.blueGray,
         primary: colors['indigo'],
         secondary: colors['teal'],
       },
+      fontFamily: {
+        sans: ['DM Sans', 'sans-serif'],
+      },
     },
+    screens: Object.entries(breakpoints).reduce((obj, [key, value]) => {
+      return { ...obj, [key]: `${value}px` }
+    }, {}),
   },
   variants: {
     extend: {},

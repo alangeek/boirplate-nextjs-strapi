@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import Head from 'next/head'
+
 import { Favicon } from 'systems/Core'
 
 interface Props {
@@ -12,10 +13,10 @@ export const Layout: FC<Props> = ({ head, children, title }) => {
     <>
       <Head>
         <title>{title}</title>
-        <meta name="description" content="meu app descrição" />
+        <meta name="description" content="My app description" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {head}
         <Favicon />
+        {head}
       </Head>
       {children}
     </>
