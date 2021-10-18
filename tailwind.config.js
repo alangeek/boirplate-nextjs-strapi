@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -8,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
+        body: colors.blueGray['100'],
         gray: colors.blueGray,
         primary: colors['indigo'],
         secondary: colors['teal'],
